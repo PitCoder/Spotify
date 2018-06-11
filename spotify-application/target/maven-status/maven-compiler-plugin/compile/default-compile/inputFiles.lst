@@ -1,0 +1,11 @@
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/AdminDashboardServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/user/UserDashboardServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/login/LoginService.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/GetDatabasesServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/GetTableContentServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/services/DatabaseConnectionService.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/listeners/ServletListener.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/GetProcessedDataServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/AdminDashboardService.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/admin/GetTablesServlet.java
+/home/ESCOM/eclipse-workspace/spotify-application/src/main/java/login/LoginServlet.java

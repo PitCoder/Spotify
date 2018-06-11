@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- webapp/WEB-INF/web.xml -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>spotify-application</display-name>
+  <welcome-file-list>
+    <welcome-file>login.do</welcome-file>
+  </welcome-file-list>
+  <display-name>context-listener</display-name>
+  <listener>
+    <listener-class>listeners.ServletListener</listener-class>
+  </listener>
+  <display-name>context-parameters</display-name>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>admin</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>admin</param-value>
+  </context-param>
+</web-app>
