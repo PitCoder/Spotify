@@ -51,7 +51,8 @@ public class LoginServlet extends HttpServlet {
 		
 		if(userLoginValidation.isUserValid(userId, password)) {
 			request.getSession().setAttribute("userId", userId);
-			if(userLoginValidation.getRole().equals("Admin")) {
+			request.getSession().setAttribute("userName", userLoginValidation.getUserName());
+			if(userLoginValidation.getRole().equals("A")) {
 				response.sendRedirect("/adminDashboard.do");
 			}
 			else {

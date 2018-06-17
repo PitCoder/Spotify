@@ -97,7 +97,7 @@
 	      </div>
 	    </nav>
 		<div class="breadcrumbs-bar-spacer"></div>
-		<div class="container-fluid">
+		<div class="container-fluid" style="overflow:auto;">
 			<!--div class="modal fade in" id="advanced_formula_dialog" style="display: block;" aria-hidden="false"-->
 			<div class="modal fade" id="advanced_formula_dialog" style="display: none;" aria-hidden="true">
 				<div class="modal-dialog">
@@ -148,7 +148,7 @@
 			<div class="row">
 				<div class="col-xl-2 col-md-2 col-sm-2"></div>
 				<div class="col-xl-8 col-md-8 col-sm-8">
-					<h1>Welcome Admin: ${userId}</h1>
+					<h1>Welcome Admin: ${userName}</h1>
 				</div>
 				<div class="col-xl-2 col-md-2 col-sm-2"></div>
 			</div>
@@ -170,14 +170,6 @@
 						<option value="" class="text-muted">Select a table:</option>
 						</select>
 					</form>
-				</div>
-				<div class="col-xl-2 col-md-2 col-sm-2"></div>
-			</div>
-			<br></br>
-			<div class="row">
-				<div class="col-xl-2 col-md-2 col-sm-2"></div>
-				<div class="col-xl-8 col-md-8 col-sm-8">
-					<input disabled="true" type="text" id="myInput" onkeyup="search(metaTable)" placeholder="Search for names.." title="Type in a name">
 				</div>
 				<div class="col-xl-2 col-md-2 col-sm-2"></div>
 			</div>
@@ -224,6 +216,21 @@
 					<button id="submitButton" class="btn btn-success apply" style="display: none;" onclick="submitTable()" disabled="true">submit</button>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-xl-2 col-md-2 col-sm-2"></div>
+				<div class="col-xl-8 col-md-8 col-sm-8">
+					<div id="myDiagramDiv" style="background-color: white; border: solid 1px black; width: 100%; height: 500px; overflow:auto;"></div>
+					  <p>
+					  Este es el diagrama de decisiones correspondiente para los attributos seleccionados
+					  </p>
+				</div>
+				<div class="col-xl-2 col-md-2 col-sm-2"></div>
+			</div>
+			<footer class="footer">
+		      <div class="container">
+		        <span class="text-muted">@Copyright Eric Alejandro López Ayala 2018.</span>
+		      </div>
+		    </footer>
 		</div>
 		
 		<script>
@@ -839,6 +846,7 @@
     			}	
     		});
     	</script>
+    	
     	<script>
     		function verifyChecked(button){
     			if(button.checked == true){
@@ -897,7 +905,15 @@
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if(this.readyState == 4 && this.status == 200){
-						alert("Sended");
+						alert("Data Processed");
+						var decisionTree = this.responseText;
+						console.log(decisionTree);
+						var div = document.getElementById("myDiagramDiv");
+						var pre = document.createElement("pre");
+						pre.setAttribute("style","padding-left: 120px;");
+						pre.id = "testResult";
+						pre.innerHTML = decisionTree;
+						div.appendChild(pre);
 					}
 				};
 				xhttp.open("POST", "/GetProcessedDataServlet", true);

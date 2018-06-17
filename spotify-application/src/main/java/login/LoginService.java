@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class LoginService {
 	private DatabaseConnectionService dbConnection;
 	private String userRole = "";
+	private String userName = "";
 	
 	public LoginService(){
 		this.dbConnection = new DatabaseConnectionService();
@@ -20,12 +21,12 @@ public class LoginService {
 		try{
 			Connection connection = dbConnection.getConnection();
 			String queryString = 
-					"select r.description " +
+					"select r.description, u.usrname " +
 					"from role r, login l, user u " +
 					"where r.idRole = l.idRole " + 
-					"and l.email = u.idUser " +
-					"and email = ? " +
-					"and password = ? ";
+					"and l.email = u.email " +
+					"and l.email = ? " +
+					"and l.password = ? ";
 			
 			PreparedStatement queryUsers = null;
 			ResultSet result;
@@ -39,6 +40,8 @@ public class LoginService {
 			if(result.isBeforeFirst()) {
 				while(result.next()){
 					this.userRole = result.getString("description");
+					this.userName = result.getString("usrname");
+					System.out.println("Username: " + this.userName);
 					System.out.println("Role: " + this.userRole);
 				}
 				valid = true;
@@ -57,5 +60,9 @@ public class LoginService {
 	
 	public String getRole() {
 		return this.userRole;
+	}
+	
+	public String getUserName() {
+		return this.userName;
 	}
 }

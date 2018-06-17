@@ -1,0 +1,946 @@
+Getting Connection to database...
+
+==============================================================
+QUERY: 
+
+SELECT artist.idregion ,  genre.name ,  song.year ,  song.hit 
+FROM user, playlist_has_followers, playlist, playlist_has_songs, song, genre, region, artist
+WHERE region.idregion = user.idregion
+AND user.email = playlist_has_followers.email
+AND playlist_has_followers.idplaylist = playlist.idplaylist
+AND playlist.idplaylist = playlist_has_songs.idplaylist
+AND playlist_has_songs.idsong = song.idsong
+AND song.idgenre = genre.idgenre
+AND song.idartist = artist.idartist
+LIMIT 5000;
+==============================================================
+KEYSET
+  artist.idregion:     American    European  
+  genre.name:     Pop    Rock    Jazz    Electronic    Funk / Soul    Hip Hop  
+  song.year:     90's    00's    70's    80's    60's  
+  song.hit:     Y    N  
+==============================================================
+ARRAYSET
+  artist.idregion
+  genre.name
+  song.year
+  song.hit
+==============================================================
+AGREGANDO CLASE Y ATRIBUTOS
+  song.hit:   ***Clase Agregado***
+  artist.idregion:   ***Atributo Agregado***
+  genre.name:   ***Atributo Agregado***
+  song.year:   ***Atributo Agregado***
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 1072
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 804
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 1541
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 1583
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: Y  Frecuencia: 402
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: N  Frecuencia: 603
+Atributo: song.year  Valor de Atributo: 00's Valor de Clase: Y  Frecuencia: 201
+Atributo: song.year  Valor de Atributo: 00's Valor de Clase: N  Frecuencia: 109
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: Y  Frecuencia: 871
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: N  Frecuencia: 871
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: Y  Frecuencia: 603
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: N  Frecuencia: 536
+Atributo: song.year  Valor de Atributo: 60's Valor de Clase: Y  Frecuencia: 536
+Atributo: song.year  Valor de Atributo: 60's Valor de Clase: N  Frecuencia: 268
+Atributo: genre.name  Valor de Atributo: Pop Valor de Clase: Y  Frecuencia: 536
+Atributo: genre.name  Valor de Atributo: Pop Valor de Clase: N  Frecuencia: 201
+Atributo: genre.name  Valor de Atributo: Rock Valor de Clase: Y  Frecuencia: 1139
+Atributo: genre.name  Valor de Atributo: Rock Valor de Clase: N  Frecuencia: 1072
+Atributo: genre.name  Valor de Atributo: Jazz Valor de Clase: Y  Frecuencia: 67
+Atributo: genre.name  Valor de Atributo: Jazz Valor de Clase: N  Frecuencia: 0
+Atributo: genre.name  Valor de Atributo: Electronic Valor de Clase: Y  Frecuencia: 201
+Atributo: genre.name  Valor de Atributo: Electronic Valor de Clase: N  Frecuencia: 335
+Atributo: genre.name  Valor de Atributo: Funk / Soul Valor de Clase: Y  Frecuencia: 402
+Atributo: genre.name  Valor de Atributo: Funk / Soul Valor de Clase: N  Frecuencia: 377
+Atributo: genre.name  Valor de Atributo: Hip Hop Valor de Clase: Y  Frecuencia: 268
+Atributo: genre.name  Valor de Atributo: Hip Hop Valor de Clase: N  Frecuencia: 402
+==============================================================
+
+***Calculando la Entropia Binaria para cada atributo***
+Clase valor: Y
+Clase valor: N
+Valor de p: 7839.0
+Valor de n: 7161.0
+*****************************
+Nombre valor: American
+Frecuencia de p: 1072
+Frecuencia de n: 804
+Valor de logp: 0.5714285714285714
+Valor de logn: 0.42857142857142855
+Entropia valor: 0.9852281360342516
+
+Nombre valor: European
+Frecuencia de p: 1541
+Frecuencia de n: 1583
+Valor de logp: 0.4932778489116517
+Valor de logn: 0.5067221510883483
+Entropia valor: 0.9998696130406854
+
+Entropia Atributo: 0.9943761308678715
+Frecuencia Atributo: 5000.0
+Ganancia calculada: 0.004149625064495122
+Ganancia obtenida: 0.004149625064495122
+Ganancia obtenida: 0.004149625064495122
+*****************************
+Nombre valor: 90's
+Frecuencia de p: 402
+Frecuencia de n: 603
+Valor de logp: 0.4
+Valor de logn: 0.6
+Entropia valor: 0.9709505944546686
+
+Nombre valor: 00's
+Frecuencia de p: 201
+Frecuencia de n: 109
+Valor de logp: 0.6483870967741936
+Valor de logn: 0.35161290322580646
+Entropia valor: 0.9355002719592389
+
+Nombre valor: 70's
+Frecuencia de p: 871
+Frecuencia de n: 871
+Valor de logp: 0.5
+Valor de logn: 0.5
+Entropia valor: 1.0
+
+Nombre valor: 80's
+Frecuencia de p: 603
+Frecuencia de n: 536
+Valor de logp: 0.5294117647058824
+Valor de logn: 0.47058823529411764
+Entropia valor: 0.9975025463691153
+
+Nombre valor: 60's
+Frecuencia de p: 536
+Frecuencia de n: 268
+Valor de logp: 0.6666666666666666
+Valor de logn: 0.3333333333333333
+Entropia valor: 0.9182958340544896
+
+Entropia Atributo: 0.9764551365257075
+Frecuencia Atributo: 5000.0
+Ganancia calculada: 0.02207061940665911
+Ganancia obtenida: 0.02207061940665911
+Ganancia obtenida: 0.02207061940665911
+*****************************
+Nombre valor: Pop
+Frecuencia de p: 536
+Frecuencia de n: 201
+Valor de logp: 0.7272727272727273
+Valor de logn: 0.2727272727272727
+Entropia valor: 0.8453509366224365
+
+Nombre valor: Rock
+Frecuencia de p: 1139
+Frecuencia de n: 1072
+Valor de logp: 0.5151515151515151
+Valor de logn: 0.48484848484848486
+Entropia valor: 0.9993375041688847
+
+Nombre valor: Jazz
+Frecuencia de p: 67
+Frecuencia de n: 0
+Valor de logp: 1.0
+Valor de logn: 0.0
+Entropia valor: 0.0
+
+Nombre valor: Electronic
+Frecuencia de p: 201
+Frecuencia de n: 335
+Valor de logp: 0.375
+Valor de logn: 0.625
+Entropia valor: 0.9544340029249649
+
+Nombre valor: Funk / Soul
+Frecuencia de p: 402
+Frecuencia de n: 377
+Valor de logp: 0.5160462130937099
+Valor de logn: 0.4839537869062901
+Entropia valor: 0.999256939427246
+
+Nombre valor: Hip Hop
+Frecuencia de p: 268
+Frecuencia de n: 402
+Valor de logp: 0.4
+Valor de logn: 0.6
+Entropia valor: 0.9709505944546686
+
+Entropia Atributo: 0.9546187083348746
+Frecuencia Atributo: 5000.0
+Ganancia calculada: 0.04390704759749198
+Ganancia obtenida: 0.04390704759749198
+Ganancia obtenida: 0.04390704759749198
+
+El atributo con maxima ganancia es: genre.name Ganancia: 0.04390704759749198
+
+==========================================================
+Valor atributo seleccionado: Pop
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+(Mapa) Nombre Atributo: song.year
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 1608
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 603
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: Y  Frecuencia: 1608
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: N  Frecuencia: 603
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1608.0
+Valor de n: 603.0
+Información: 0.8453509366224365
+*****************************
+Nombre valor: American
+Frecuencia de p: 1608
+Frecuencia de n: 603
+Valor de logp: 0.7272727272727273
+Valor de logn: 0.2727272727272727
+Entropia valor: 0.8453509366224365
+
+Entropia Atributo: 0.8453509366224365
+Frecuencia Atributo: 2211.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+*****************************
+Nombre valor: 80's
+Frecuencia de p: 1608
+Frecuencia de n: 603
+Valor de logp: 0.7272727272727273
+Valor de logn: 0.2727272727272727
+Entropia valor: 0.8453509366224365
+
+Entropia Atributo: 0.8453509366224365
+Frecuencia Atributo: 2211.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: song.year Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: 80's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 1608
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 603
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1608.0
+Valor de n: 603.0
+Información: 0.8453509366224365
+*****************************
+Nombre valor: American
+Frecuencia de p: 1608
+Frecuencia de n: 603
+Valor de logp: 0.7272727272727273
+Valor de logn: 0.2727272727272727
+Entropia valor: 0.8453509366224365
+
+Entropia Atributo: 0.8453509366224365
+Frecuencia Atributo: 2211.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: American
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: Rock
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+(Mapa) Nombre Atributo: song.year
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 603
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 201
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 2814
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 3015
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: Y  Frecuencia: 402
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: N  Frecuencia: 402
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: Y  Frecuencia: 1407
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: N  Frecuencia: 1206
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: Y  Frecuencia: 201
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: N  Frecuencia: 804
+Atributo: song.year  Valor de Atributo: 60's Valor de Clase: Y  Frecuencia: 1407
+Atributo: song.year  Valor de Atributo: 60's Valor de Clase: N  Frecuencia: 804
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 3417.0
+Valor de n: 3216.0
+Información: 0.9993375041688847
+*****************************
+Nombre valor: American
+Frecuencia de p: 603
+Frecuencia de n: 201
+Valor de logp: 0.75
+Valor de logn: 0.25
+Entropia valor: 0.8112781244591328
+
+Nombre valor: European
+Frecuencia de p: 2814
+Frecuencia de n: 3015
+Valor de logp: 0.4827586206896552
+Valor de logn: 0.5172413793103449
+Entropia valor: 0.9991421039919088
+
+Entropia Atributo: 0.9763707125333905
+Frecuencia Atributo: 6633.0
+Ganancia calculada: 0.0229667916354942
+Ganancia obtenida: 0.0229667916354942
+Ganancia obtenida: 0.0229667916354942
+*****************************
+Nombre valor: 90's
+Frecuencia de p: 402
+Frecuencia de n: 402
+Valor de logp: 0.5
+Valor de logn: 0.5
+Entropia valor: 1.0
+
+Nombre valor: 70's
+Frecuencia de p: 1407
+Frecuencia de n: 1206
+Valor de logp: 0.5384615384615384
+Valor de logn: 0.46153846153846156
+Entropia valor: 0.9957274520849256
+
+Nombre valor: 80's
+Frecuencia de p: 201
+Frecuencia de n: 804
+Valor de logp: 0.2
+Valor de logn: 0.8
+Entropia valor: 0.7219280948873623
+
+Nombre valor: 60's
+Frecuencia de p: 1407
+Frecuencia de n: 804
+Valor de logp: 0.6363636363636364
+Valor de logn: 0.36363636363636365
+Entropia valor: 0.9456603046006402
+
+Entropia Atributo: 0.9380715364287239
+Frecuencia Atributo: 6633.0
+Ganancia calculada: 0.0612659677401608
+Ganancia obtenida: 0.0612659677401608
+Ganancia obtenida: 0.0612659677401608
+
+El atributo con maxima ganancia es: song.year Ganancia: 0.0612659677401608
+
+==========================================================
+Valor atributo seleccionado: 90's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 402
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 402
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 402.0
+Valor de n: 402.0
+Información: 1.0
+*****************************
+Nombre valor: European
+Frecuencia de p: 402
+Frecuencia de n: 402
+Valor de logp: 0.5
+Valor de logn: 0.5
+Entropia valor: 1.0
+
+Entropia Atributo: 1.0
+Frecuencia Atributo: 804.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: 70's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 1407
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 1206
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1407.0
+Valor de n: 1206.0
+Información: 0.9957274520849256
+*****************************
+Nombre valor: European
+Frecuencia de p: 1407
+Frecuencia de n: 1206
+Valor de logp: 0.5384615384615384
+Valor de logn: 0.46153846153846156
+Entropia valor: 0.9957274520849256
+
+Entropia Atributo: 0.9957274520849256
+Frecuencia Atributo: 2613.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: 80's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 201
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 201
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 603
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 201.0
+Valor de n: 804.0
+Información: 0.7219280948873623
+*****************************
+Nombre valor: American
+Frecuencia de p: 0
+Frecuencia de n: 201
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Nombre valor: European
+Frecuencia de p: 201
+Frecuencia de n: 603
+Valor de logp: 0.25
+Valor de logn: 0.75
+Entropia valor: 0.8112781244591328
+
+Entropia Atributo: 0.6490224995673063
+Frecuencia Atributo: 1005.0
+Ganancia calculada: 0.07290559532005603
+Ganancia obtenida: 0.07290559532005603
+Ganancia obtenida: 0.07290559532005603
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.07290559532005603
+
+==========================================================
+Valor atributo seleccionado: American
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: 60's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 603
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 804
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 804
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1407.0
+Valor de n: 804.0
+Información: 0.9456603046006402
+*****************************
+Nombre valor: American
+Frecuencia de p: 603
+Frecuencia de n: 0
+Valor de logp: 1.0
+Valor de logn: 0.0
+Entropia valor: 0.0
+
+Nombre valor: European
+Frecuencia de p: 804
+Frecuencia de n: 804
+Valor de logp: 0.5
+Valor de logn: 0.5
+Entropia valor: 1.0
+
+Entropia Atributo: 0.7272727272727273
+Frecuencia Atributo: 2211.0
+Ganancia calculada: 0.21838757732791292
+Ganancia obtenida: 0.21838757732791292
+Ganancia obtenida: 0.21838757732791292
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.21838757732791292
+
+==========================================================
+Valor atributo seleccionado: American
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: Jazz
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: Electronic
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+(Mapa) Nombre Atributo: song.year
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 402
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 603
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 603
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: N  Frecuencia: 201
+Atributo: song.year  Valor de Atributo: 00's Valor de Clase: Y  Frecuencia: 603
+Atributo: song.year  Valor de Atributo: 00's Valor de Clase: N  Frecuencia: 201
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: N  Frecuencia: 402
+Atributo: song.year  Valor de Atributo: 80's Valor de Clase: N  Frecuencia: 201
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 603.0
+Valor de n: 1005.0
+Información: 0.9544340029249649
+*****************************
+Nombre valor: American
+Frecuencia de p: 0
+Frecuencia de n: 402
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Nombre valor: European
+Frecuencia de p: 603
+Frecuencia de n: 603
+Valor de logp: 0.5
+Valor de logn: 0.5
+Entropia valor: 1.0
+
+Entropia Atributo: 0.75
+Frecuencia Atributo: 1608.0
+Ganancia calculada: 0.20443400292496494
+Ganancia obtenida: 0.20443400292496494
+Ganancia obtenida: 0.20443400292496494
+*****************************
+Nombre valor: 90's
+Frecuencia de p: 0
+Frecuencia de n: 201
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Nombre valor: 00's
+Frecuencia de p: 603
+Frecuencia de n: 201
+Valor de logp: 0.75
+Valor de logn: 0.25
+Entropia valor: 0.8112781244591328
+
+Nombre valor: 70's
+Frecuencia de p: 0
+Frecuencia de n: 402
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Nombre valor: 80's
+Frecuencia de p: 0
+Frecuencia de n: 201
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Entropia Atributo: 0.4056390622295664
+Frecuencia Atributo: 1608.0
+Ganancia calculada: 0.5487949406953985
+Ganancia obtenida: 0.5487949406953985
+Ganancia obtenida: 0.5487949406953985
+
+El atributo con maxima ganancia es: song.year Ganancia: 0.5487949406953985
+
+==========================================================
+Valor atributo seleccionado: 90's
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: 00's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 603
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 201
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 603.0
+Valor de n: 201.0
+Información: 0.8112781244591328
+*****************************
+Nombre valor: European
+Frecuencia de p: 603
+Frecuencia de n: 201
+Valor de logp: 0.75
+Valor de logn: 0.25
+Entropia valor: 0.8112781244591328
+
+Entropia Atributo: 0.8112781244591328
+Frecuencia Atributo: 804.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: 70's
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: 80's
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: Funk / Soul
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+(Mapa) Nombre Atributo: song.year
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 1206
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 1131
+Atributo: song.year  Valor de Atributo: 00's Valor de Clase: N  Frecuencia: 126
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: Y  Frecuencia: 1206
+Atributo: song.year  Valor de Atributo: 70's Valor de Clase: N  Frecuencia: 1005
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1206.0
+Valor de n: 1131.0
+Información: 0.999256939427246
+*****************************
+Nombre valor: European
+Frecuencia de p: 1206
+Frecuencia de n: 1131
+Valor de logp: 0.5160462130937099
+Valor de logn: 0.4839537869062901
+Entropia valor: 0.999256939427246
+
+Entropia Atributo: 0.999256939427246
+Frecuencia Atributo: 2337.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+*****************************
+Nombre valor: 00's
+Frecuencia de p: 0
+Frecuencia de n: 126
+Valor de logp: 0.0
+Valor de logn: 1.0
+Entropia valor: 0.0
+
+Nombre valor: 70's
+Frecuencia de p: 1206
+Frecuencia de n: 1005
+Valor de logp: 0.5454545454545454
+Valor de logn: 0.45454545454545453
+Entropia valor: 0.9940302114769565
+
+Entropia Atributo: 0.9404367982779421
+Frecuencia Atributo: 2337.0
+Ganancia calculada: 0.058820141149303895
+Ganancia obtenida: 0.058820141149303895
+Ganancia obtenida: 0.058820141149303895
+
+El atributo con maxima ganancia es: song.year Ganancia: 0.058820141149303895
+
+==========================================================
+Valor atributo seleccionado: 00's
+Es una Hoja
+
+==========================================================
+Valor atributo seleccionado: 70's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: Y  Frecuencia: 1206
+Atributo: artist.idregion  Valor de Atributo: European Valor de Clase: N  Frecuencia: 1005
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 1206.0
+Valor de n: 1005.0
+Información: 0.9940302114769565
+*****************************
+Nombre valor: European
+Frecuencia de p: 1206
+Frecuencia de n: 1005
+Valor de logp: 0.5454545454545454
+Valor de logn: 0.45454545454545453
+Entropia valor: 0.9940302114769565
+
+Entropia Atributo: 0.9940302114769565
+Frecuencia Atributo: 2211.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: European
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+==========================================================
+Valor atributo seleccionado: Hip Hop
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+(Mapa) Nombre Atributo: song.year
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 804
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 1206
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: Y  Frecuencia: 804
+Atributo: song.year  Valor de Atributo: 90's Valor de Clase: N  Frecuencia: 1206
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 804.0
+Valor de n: 1206.0
+Información: 0.9709505944546686
+*****************************
+Nombre valor: American
+Frecuencia de p: 804
+Frecuencia de n: 1206
+Valor de logp: 0.4
+Valor de logn: 0.6
+Entropia valor: 0.9709505944546686
+
+Entropia Atributo: 0.9709505944546686
+Frecuencia Atributo: 2010.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+*****************************
+Nombre valor: 90's
+Frecuencia de p: 804
+Frecuencia de n: 1206
+Valor de logp: 0.4
+Valor de logn: 0.6
+Entropia valor: 0.9709505944546686
+
+Entropia Atributo: 0.9709505944546686
+Frecuencia Atributo: 2010.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: song.year Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: 90's
+Requiere de mas divisiones
+(Mapa) Nombre Atributo: artist.idregion
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: Y  Frecuencia: 804
+Atributo: artist.idregion  Valor de Atributo: American Valor de Clase: N  Frecuencia: 1206
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+Valor de p: 804.0
+Valor de n: 1206.0
+Información: 0.9709505944546686
+*****************************
+Nombre valor: American
+Frecuencia de p: 804
+Frecuencia de n: 1206
+Valor de logp: 0.4
+Valor de logn: 0.6
+Entropia valor: 0.9709505944546686
+
+Entropia Atributo: 0.9709505944546686
+Frecuencia Atributo: 2010.0
+Ganancia calculada: 0.0
+Ganancia obtenida: 0.0
+Ganancia obtenida: 0.0
+
+El atributo con maxima ganancia es: artist.idregion Ganancia: 0.0
+
+==========================================================
+Valor atributo seleccionado: American
+Requiere de mas divisiones
+==============================================================
+
+***Prueba de frecuencias por atributo-valor***
+
+***Fin de prueba de frecuencias por atributo-valor***
+Clase valor: Y
+Clase valor: N
+
+
+***** ARBOL DE DECISION (ID3) ****
+
+
+└── genre.name
+    ├── Pop
+    │   └── song.year
+    │       └── 80's
+    │           └── artist.idregion
+    │               └── American
+    │                   └── Y
+    ├── Rock
+    │   └── song.year
+    │       ├── 90's
+    │       │   └── artist.idregion
+    │       │       └── European
+    │       │           └── Y
+    │       ├── 70's
+    │       │   └── artist.idregion
+    │       │       └── European
+    │       │           └── Y
+    │       ├── 80's
+    │       │   └── artist.idregion
+    │       │       ├── American
+    │       │       │   └── N
+    │       │       └── European
+    │       │           └── N
+    │       └── 60's
+    │           └── artist.idregion
+    │               ├── American
+    │               │   └── Y
+    │               └── European
+    │                   └── Y
+    ├── Jazz
+    │   └── Y
+    ├── Electronic
+    │   └── song.year
+    │       ├── 90's
+    │       │   └── N
+    │       ├── 00's
+    │       │   └── artist.idregion
+    │       │       └── European
+    │       │           └── Y
+    │       ├── 70's
+    │       │   └── N
+    │       └── 80's
+    │           └── N
+    ├── Funk / Soul
+    │   └── song.year
+    │       ├── 00's
+    │       │   └── N
+    │       └── 70's
+    │           └── artist.idregion
+    │               └── European
+    │                   └── Y
+    └── Hip Hop
+        └── song.year
+            └── 90's
+                └── artist.idregion
+                    └── American
+                        └── N

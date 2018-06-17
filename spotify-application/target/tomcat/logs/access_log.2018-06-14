@@ -1,0 +1,15 @@
+127.0.0.1 - - [14/Jun/2018:18:48:04 -0500] "GET / HTTP/1.1" 200 1492 http-bio-8080-exec-1 263
+127.0.0.1 - - [14/Jun/2018:18:48:04 -0500] "GET /stylesheets/global.css HTTP/1.1" 200 342 http-bio-8080-exec-2 10
+127.0.0.1 - - [14/Jun/2018:18:48:04 -0500] "GET /webjars/bootstrap/4.1.1/dist/css/bootstrap.min.css HTTP/1.1" 200 16384 http-bio-8080-exec-3 134
+127.0.0.1 - - [14/Jun/2018:18:48:04 -0500] "GET /webjars/popper.js/1.14.3/dist/umd/popper.min.js HTTP/1.1" 304 - http-bio-8080-exec-4 121
+127.0.0.1 - - [14/Jun/2018:18:48:05 -0500] "GET /images/spotifyLogin.jpg HTTP/1.1" 304 - http-bio-8080-exec-5 4
+127.0.0.1 - - [14/Jun/2018:18:48:05 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-6 6
+127.0.0.1 - - [14/Jun/2018:18:48:05 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-7 2
+127.0.0.1 - - [14/Jun/2018:18:48:13 -0500] "POST /login.do HTTP/1.1" 302 - http-bio-8080-exec-8 747
+127.0.0.1 - - [14/Jun/2018:18:48:13 -0500] "GET /adminDashboard.do HTTP/1.1" 200 31660 http-bio-8080-exec-9 129
+127.0.0.1 - - [14/Jun/2018:18:48:14 -0500] "GET /webjars/datatables/1.10.16/css/dataTables.bootstrap4.min.css HTTP/1.1" 200 5034 http-bio-8080-exec-10 6
+127.0.0.1 - - [14/Jun/2018:18:48:14 -0500] "GET /stylesheets/popup.css HTTP/1.1" 304 - http-bio-8080-exec-10 76
+127.0.0.1 - - [14/Jun/2018:18:48:14 -0500] "GET /css/searchicon.png HTTP/1.1" 404 987 http-bio-8080-exec-10 2
+127.0.0.1 - - [14/Jun/2018:18:48:16 -0500] "GET /GetDatabasesServlet HTTP/1.1" 200 97 http-bio-8080-exec-10 151
+127.0.0.1 - - [14/Jun/2018:18:48:20 -0500] "GET /GetTablesServlet?dbName=spotify HTTP/1.1" 200 33 http-bio-8080-exec-10 39
+127.0.0.1 - - [14/Jun/2018:18:48:21 -0500] "GET /GetTableContentServlet?dbName=spotify&tableName=country HTTP/1.1" 200 176 http-bio-8080-exec-10 52
